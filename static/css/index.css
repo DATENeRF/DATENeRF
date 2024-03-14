@@ -35,7 +35,9 @@ body {
   max-height: parent;
 
 }
-
+#dollyzoom {
+  border-radius: 20px; /* Adjust this value to change the roundness of the corners */
+}
 .publication-banner video {
   position: relative;
   left: auto;

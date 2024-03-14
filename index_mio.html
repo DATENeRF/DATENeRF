@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="DATENeRF: Depth-Aware Text-based Editing of NeRFs">
+    <!-- <meta name="keywords" content="Nerfies, D-NeRF, NeRF"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DATENeRF: Depth-Aware Text-based Editing of NeRFs</title>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-PYVRSFMDRL');
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Ensure jQuery is included -->
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title">DATENeRF: Depth-Aware Text-based Editing of NeRFs</h1>
+                        <h2 class="subtitle is-3 publication-subtitle">Anonymous ECCV 2024 Submission</h2>
+                        <h2 class="subtitle is-3 publication-subtitle">Paper ID #1752</h2>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                            Recent diffusion models have demonstrated impressive capabilities for text-based 2D image
+                            editing. Applying similar ideas to edit a NeRF scene remains challenging as editing 2D
+                            frames individually does not produce multiview-consistent results.
+                        </p>
+                        <p>
+                            We make the key observation that the geometry of a NeRF scene provides a way to unify these
+                            2D edits.
+                            We leverage this geometry in depth-conditioned ControlNet to improve the consistency of
+                            individual 2D image edits. Furthermore, we propose an inpainting scheme that uses the NeRF
+                            scene depth to propagate 2D edits across images while staying robust to errors and
+                            resampling issues.
+                        </p>
+                        <p>
+                            We demonstrate that this leads to more consistent, realistic and detailed editing results
+                            compared to previous state-of-the-art text-based NeRF editing methods.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+                <div class="navbar-menu">
+                    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+                        <!-- <a class="navbar-item" href="https://keunhong.com">
+                <span class="icon">
+                    <i class="fas fa-home"></i>
+                </span>
+                </a> -->
+
+                        <div class="navbar-item has-dropdown is-hoverable">
+                            <a class="navbar-link">
+                                Results by Section
+                            </a>
+                            <div class="navbar-dropdown">
+                                <!-- <a class="navbar-item" href="Fig 1.">Section 1 -->
+                                <li><a href="#section1">Section 1</a></li>
+                                </a>
+                                <a class="navbar-item" href="https://nerfies.github.io">
+                                    Fig.2
+                                </a>
+                                <a class="navbar-item" href="https://latentfusion.github.io">
+                                    LatentFusion
+                                </a>
+                                <a class="navbar-item" href="https://photoshape.github.io">
+                                    PhotoShape
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+
+            <section class="section">
+                <div class="container is-max-desktop">
+                    <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
+                    <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2>
+
+                    <div
+                        style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
+                        <h3 class="title is-3" style="text-align: center;">'A Corgi'</h3>
+
+                        <div class="columns is-centered">
+
+                            <!-- Visual Effects. -->
+                            <div class="column">
+                                <div class="content">
+                                    <!-- <h2 class="title is-3">Fig 1.</h2> -->
+                                    <p style="text-align: center;">
+                                        </pstyle>
+                                        Instruct-NeRF2NeRF
+                                    </p>
+
+                                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                        <source src="static/videos/SuppMat/Fig1/bear/a corgi/in2n-masks.mp4"
+                                            type="video/mp4">
+                                    </video>
+                                    <p style="text-align: center;">
+                                        </pstyle>
+                                        Ours Without Projection
+                                    </p>
+                                    <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                        <source src="static/videos/SuppMat/Fig1/bear/a corgi/ours-proj.mp4"
+                                            type="video/mp4">
+                                    </video>
+                                </div>
+                            </div>
+                            <!--/ Visual Effects. -->
+
+                            <!-- Matting. -->
+                            <div class="column">
+                                <!-- <h2 class="title is-3">Results</h2> -->
+                                <div class="columns is-centered">
+                                    <div class="column content">
+                                        <p style="text-align: center;">
+                                            </pstyle>
+                                            Instruct-NeRF2NeRF + Masks
+                                        </p>
+                                        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                            <source src="static/videos/SuppMat/Fig1/bear/a corgi/in2n+masks.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                        <p style="text-align: center;">
+                                            </pstyle>
+                                            Ours
+                                        </p>
+                                        <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                            <source src="static/videos/SuppMat/Fig1/bear/a corgi/ours.mp4"
+                                                type="video/mp4">
+                                        </video>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
