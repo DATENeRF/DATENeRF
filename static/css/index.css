@@ -157,3 +157,20 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+.navbar {
+    font-size: 2em; /* Increase font size */
+    padding: 10px 20px; /* Increase padding */
+}
+
+.color1 { background-color: rgb(235, 235, 235); }
+.color2 { background-color: rgb(253, 234, 234); }
+.color3 { background-color: rgb(231, 231, 255); }
+.color4 { background-color: rgb(202, 255, 202); }
+.color5 { background-color: rgb(246, 223, 192); }
+.color6 { background-color: rgb(192, 241, 246); }
+.color7 { background-color: rgb(232, 246, 192); }
+
+.navbar-item {
+    color: rgb(0, 0, 0); /* Change text color to white for visibility */
+}
