@@ -38,6 +38,12 @@ body {
 #dollyzoom {
   border-radius: 20px; /* Adjust this value to change the roundness of the corners */
 }
+
+.video, .videoMerge {
+    border-radius: 15px; /* This value determines the roundness of the corners */
+    overflow: hidden; /* Ensures the content inside the border follows the same roundness */
+}
+
 .publication-banner video {
   position: relative;
   left: auto;
@@ -170,6 +176,11 @@ body {
 .color5 { background-color: rgb(246, 223, 192); }
 .color6 { background-color: rgb(192, 241, 246); }
 .color7 { background-color: rgb(232, 246, 192); }
+.color8 { background-color: rgb(246, 244, 192); }
+.color9 { background-color: rgb(192, 246, 241); }
+.color10 { background-color: rgb(246, 192, 219); }
+
+
 
 .navbar-item {
     color: rgb(0, 0, 0); /* Change text color to white for visibility */

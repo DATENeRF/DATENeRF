@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <link rel="stylesheet" href="./static/css/index.css">
-    <link rel="icon" href="./static/images/favicon.svg">
+    <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -37,24 +37,242 @@
     <script src="./static/js/bulma-slider.min.js"></script>
     <script src="./static/js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Ensure jQuery is included -->
+    <script src="./static/js/video-comparison.js"></script>
 </head>
 
 <body>
     <section class="hero">
         <div class="hero-body">
-            <div class="container is-max-desktop">
+            <div class="container is-max-desktop" style= "margin-top: -50px;">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
                         <h1 class="title is-1 publication-title">DATENeRF: Depth-Aware Text-based Editing of NeRFs</h1>
-                        <h2 class="subtitle is-3 publication-subtitle">Anonymous ECCV 2024 Submission</h2>
-                        <h2 class="subtitle is-3 publication-subtitle">Paper ID #1752</h2>
+                        <div class="is-size-5 publication-authors" style= "margin-top: -30px;">
+                            <span class="author-block">
+                                <a href="https://scholar.google.com/citations?user=7vnDKiwAAAAJ&hl=en">Sara
+                                    Rojas</a><sup>1</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://julienphilip.com/">Julien Philip</a><sup>2</sup>,</span>
+                            <span class="author-block">
+                                <a href="https://kai-46.github.io/website/">Kai Zhang</a><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://sai-bi.github.io/">Sai Bi</a><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://luanfujun.com/">Fujun Luan</a><sup>2</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://www.bernardghanem.com/">Bernard Ghanem</a><sup>1</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a><sup>2</sup>
+                            </span>
+                        </div>
 
+                        <div class="is-size-5 publication-authors">
+                            <span class="author-block"><sup>1</sup>KAUST,</span>
+                            <span class="author-block"><sup>2</sup>Adobe Research</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links" style= "margin-top: -10px;">
+                                <!-- PDF Link. -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper (Coming Soon)</span>
+                                    </a>
+                                </span>
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv (Coming Soon)</span>
+                                    </a>
+                                </span>
+
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a href="https://github.com/"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code (Coming Soon)</span>
+                                    </a>
+                                </span>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+    </section>
+
+     <section class="section" style="padding: 0;">
+        <div class="container" style="display: flex; justify-content: center; margin-top: -50px; ">
+        <!-- <div class="container is-max-desktop"> -->
+            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
+            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
+
+            <div
+                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
+                <!-- <h3 class="title is-3" style="text-align: center;">'A Corgi'</h3> -->
+
+                <div class="columns is-centered">
+
+                    <div class="column">
+                        <div class="content">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a red buffalo
+                                    plaid shirt</h3>
+                                <div
+                                    style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                                    <span>Instruct-NeRF2NeRF</span>
+                                    <span>Ours</span>
+                                </div>
+                                <div class="video-compare-container" id="plaidDiv" style="padding: 0;">
+                                    <video class="video" id="plaid" loop="" playsinline="" autoplay="" muted=""
+                                        src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/both.mp4"
+                                        onplay="resizeAndPlay(this, 0.45)" style="height: 0px;"></video>
+
+                                    <canvas height="500" class="videoMerge" id="plaidMerge" width="500"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="content">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a starry night canvas</h3>
+                                <div
+                                    style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                                    <span>Instruct-NeRF2NeRF</span>
+                                    <span>Ours</span>
+                                </div>
+                                <div class="video-compare-container" id="oldDiv" style="padding: 0;">
+                                    <video class="video" id="old" loop="" playsinline="" autoplay="" muted=""
+                                        src="static/videos/SuppMat/Fig4. Results/table/a starry night canvas/both.mp4" onplay="resizeAndPlay(this, 0.45)"
+                                        style="height: 0px;"></video>
+
+                                    <canvas height="100" class="videoMerge" id="oldMerge" width="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+
+                    <div class="column">
+                        <div class="content">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a metallic vase</h3>
+                                <div
+                                    style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                                    <span>Instruct-NeRF2NeRF</span>
+                                    <span>Ours</span>
+                                </div>
+                                <div class="video-compare-container" id="vaseDiv" style="padding: 0;">
+                                    <video class="video" id="vase" loop="" playsinline="" autoplay="" muted=""
+                                        src="static/videos/SuppMat/Fig4. Results/garden/a metallic vase/both.mp4" onplay="resizeAndPlay(this, 0.45)"
+                                        style="height: 0px;"></video>
+
+                                    <canvas height="100" class="videoMerge" id="vaseMerge" width="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
     </section>
+
+     <section class="section" style="padding: 0;">
+        <div class="container" style="display: flex; justify-content: center; margin-top: -20px;">
+        <!-- <div class="container is-max-desktop"> -->
+            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
+            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
+
+            <div
+                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
+                <!-- <h3 class="title is-3" style="text-align: center;">'A Corgi'</h3> -->
+
+                <div class="columns is-centered">
+
+                    <div class="column">
+                        <div class="content">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a b&w checkered pattern table</h3>
+                                <div
+                                    style="display: flex; justify-content: space-between; margin-bottom: -2px; padding: 0px 0;">
+                                    <span>Instruct-NeRF2NeRF</span>
+                                    <span>Ours</span>
+                                </div>
+                                <div class="video-compare-container" id="tableDiv" style="padding: 0;">
+                                    <video class="video" id="table" loop="" playsinline="" autoplay="" muted=""
+                                        src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/both.mp4"
+                                        onplay="resizeAndPlay(this, 0.45)" style="height: 0px;"></video>
+
+                                    <canvas height="500" class="videoMerge" id="tableMerge" width="500"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="content">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a teddy bear with a rainbow</h3>
+                                <div
+                                    style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                                    <span>Instruct-NeRF2NeRF</span>
+                                    <span>Ours</span>
+                                </div>
+                                <div class="video-compare-container" id="bowDiv" style="padding: 0;">
+                                    <video class="video" id="bow" loop="" playsinline="" autoplay="" muted=""
+                                        src="static/videos/SuppMat/Fig5. Comparisons/teddy/raiinbow/both.mp4"
+                                        onplay="resizeAndPlay(this, 0.45)"style="height: 0px;"></video>
+
+                                    <canvas height=" 100" class="videoMerge" id="bowMerge" width="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column">
+                        <div class="content">
+                            <div class="col-md-8 col-md-offset-2">
+                                <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a Corgi</h3>
+                                <div
+                                    style="display: flex; justify-content: space-between; margin-bottom: -1px; padding: 0px 0;">
+                                    <span>Instruct-NeRF2NeRF</span>
+                                    <span>Ours</span>
+                                </div>
+                                <div class="video-compare-container" id="corgiDiv" style="padding: 0;">
+                                    <video class="video" id="corgi" loop="" playsinline="" autoplay="" muted=""
+                                        src="static/videos/SuppMat/Fig1/bear/a corgi/both.mp4"
+                                        onplay="resizeAndPlay(this, 0.45)"style="height: 0px;"></video>
+
+                                    <canvas height=" 100" class="videoMerge" id="corgiMerge" width="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--                                                 EXAMPLE                            -->
+
 
     <section class="section">
         <div class="container is-max-desktop">
@@ -64,2673 +282,55 @@
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Recent diffusion models have demonstrated impressive capabilities for text-based 2D image
+                            Recent diffusion models have demonstrated impressive capabilities for text-based 2D
+                            image
                             editing. Applying similar ideas to edit a NeRF scene remains challenging as editing 2D
                             frames individually does not produce multiview-consistent results.
                         </p>
                         <p>
-                            We make the key observation that the geometry of a NeRF scene provides a way to unify these
+                            We make the key observation that the geometry of a NeRF scene provides a way to unify
+                            these
                             2D edits.
                             We leverage this geometry in depth-conditioned ControlNet to improve the consistency of
-                            individual 2D image edits. Furthermore, we propose an inpainting scheme that uses the NeRF
+                            individual 2D image edits. Furthermore, we propose an inpainting scheme that uses the
+                            NeRF
                             scene depth to propagate 2D edits across images while staying robust to errors and
                             resampling issues.
                         </p>
                         <p>
-                            We demonstrate that this leads to more consistent, realistic and detailed editing results
+                            We demonstrate that this leads to more consistent, realistic and detailed editing
+                            results
                             compared to previous state-of-the-art text-based NeRF editing methods.
                         </p>
                     </div>
                 </div>
             </div>
-            <!--/ Abstract. -->
+        </div>
     </section>
-   <nav class="navbar" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-    <div class="navbar-menu">
-        <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link">
-                    Results by Section
+    
+    <!--/ Abstract. -->
+    <footer class="footer">
+        <div class="container">
+            <!-- <div class="content has-text-centered">
+                <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
+                    <i class="fas fa-file-pdf"></i>
                 </a>
-                <div class="navbar-dropdown">
-                    <li><a href="#section1" class="navbar-item color1">Fig 1.</a></li>
-                    <li><a href="#section2" class="navbar-item color2">Fig 4. Results</a></li>
-                    <li><a href="#section3" class="navbar-item color3">Fig 5. Comparisons</a></li>
-                    <li><a href="#section4" class="navbar-item color4">Fig 6. Convergence Speed</a></li>
-                    <li><a href="#section5" class="navbar-item color5">Fig 7. Edge-Conditioned</a></li>
-                    <li><a href="#section6" class="navbar-item color6">Fig 8. 3D Object Compositing</a></li>
-                    <li><a href="#section7" class="navbar-item color7">Fig 9. Scene Editing</a></li>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-
-    <!--                                                 EXAMPLE                            -->
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2>
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'A Corgi'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a corgi/in2n-masks.mp4" type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a corgi/ours-proj.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a corgi/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a corgi/ours.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--                                                 EXAMPLE                            -->
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'A light brown rat'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a light brown rat/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a light brown rat/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a light brown rat/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a light brown rat/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--                                                 EXAMPLE                            -->
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a sharpei'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a sharpei/in2n-masks.mp4" type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a sharpei/ours-proj.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a sharpei/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a sharpei/ours.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--                                                 EXAMPLE                            -->
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a zebra'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a zebra/in2n-masks.mp4" type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/bear/a zebra/ours-proj.mp4" type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a zebra/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/bear/a zebra/ours.mp4" type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!--                                                 EXAMPLE                            -->
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a red buffalo plaid shirt'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig1/face_complete/a red buffalo plaid shirt/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig1/face_complete/a red buffalo plaid shirt/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig1/face_complete/a red buffalo plaid shirt/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig1/face_complete/a red buffalo plaid shirt/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'andy warhol'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/face_complete/andy warhol/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/face_complete/andy warhol/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/face_complete/andy warhol/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/face_complete/andy warhol/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'fancy clown'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/face_complete/fancy clown/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/face_complete/fancy clown/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/face_complete/fancy clown/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/face_complete/fancy clown/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section1" class="title is-2">Fig 1. DATENeRF vs. IN2N on 3D Scene Editing.</h2> -->
-
-            <div
-                style="background-color: rgb(235, 235, 235);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'jimi hendrix'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/face_complete/jimi hendrix/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig1/face_complete/jimi hendrix/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/face_complete/jimi hendrix/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig1/face_complete/jimi hendrix/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <h2 id="section2" class="title is-2">Fig. 4: Results.</h2>
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a red buffalo plaid shirt'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/face/a red buffalo plaid shirt/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a tuxedo with a flower in the lapel'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face/a tuxedo with a flower in the lapel/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face/a tuxedo with a flower in the lapel/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/face/a tuxedo with a flower in the lapel/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/face/a tuxedo with a flower in the lapel/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'an old lady'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face_complete/an old lady/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face_complete/an old lady/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/face_complete/an old lady/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/face_complete/an old lady/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'benjamin franklin'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face_complete/benjamin franklin/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/face_complete/benjamin franklin/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/face_complete/benjamin franklin/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/face_complete/benjamin franklin/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a metallic vase'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/garden/a metallic vase/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/garden/a metallic vase/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/garden/a metallic vase/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/garden/a metallic vase/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'an artichoke'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/garden/an artichoke/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/garden/an artichoke/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/garden/an artichoke/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/garden/an artichoke/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a table glowing with bioluminescent patterns'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/garden_table/a table glowing with bioluminescent patterns/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/garden_table/a table glowing with bioluminescent patterns/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/garden_table/a table glowing with bioluminescent patterns/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/garden_table/a table glowing with bioluminescent patterns/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a rainbow table'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/garden_table/a rainbow table/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/garden_table/a rainbow table/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/garden_table/a rainbow table/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/garden_table/a rainbow table/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a starry night canvas'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/table/a starry night canvas/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/table/a starry night canvas/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/table/a starry night canvas/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/table/a starry night canvas/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a fauvism-style table'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/table/a fauvism-style table/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/table/a fauvism-style table/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/table/a fauvism-style table/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/table/a fauvism-style table/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a sunflower-painted table'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/table/a sunflower-painted table/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/table/a sunflower-painted table/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/table/a sunflower-painted table/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/table/a sunflower-painted table/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a billiard table'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/table/a billiard table/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/table/a billiard table/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/table/a billiard table/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/table/a billiard table/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a racoon'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a racoon/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a racoon/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/furry/a racoon/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/furry/a racoon/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a red panda'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a red panda/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a red panda/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/furry/a red panda/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/furry/a red panda/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a grizzly bear'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a grizzly bear/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a grizzly bear/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/furry/a grizzly bear/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/furry/a grizzly bear/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a panda bear'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a panda bear/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig4. Results/furry/a panda bear/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/furry/a panda bear/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/furry/a panda bear/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'kentucky fried chicken man'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-small/kentucky fried chicken man/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-small/kentucky fried chicken man/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-small/kentucky fried chicken man/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-small/kentucky fried chicken man/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'an sleeveless shirt with the lakers word stamped on
-                    it'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-small/an sleeveless shirt with the lakers word stamped on it/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-small/an sleeveless shirt with the lakers word stamped on it/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-small/an sleeveless shirt with the lakers word stamped on it/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-small/an sleeveless shirt with the lakers word stamped on it/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a tuxedo with a red bow tie'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'spiderman'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-complete/spiderman/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-complete/spiderman/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-complete/spiderman/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig4. Results/person-complete/spiderman/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section2" class="title is-2">Fig. 4: Results.</h2> -->
-
-            <div
-                style="background-color: rgb(253, 234, 234);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a tuxedo with a red bow tie'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig4. Results/person-complete/a tuxedo with a red bow tie/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <h2 id="section3" class="title is-2">Fig. 5: Comparisons.</h2>
-
-            <div
-                style="background-color: rgb(231, 231, 255);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'superman'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig5. Comparisons/face/superman/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig5. Comparisons/face/superman/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig5. Comparisons/face/superman/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig5. Comparisons/face/superman/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section3" class="title is-2">Fig. 5: Comparisons.</h2> -->
-
-            <div
-                style="background-color: rgb(231, 231, 255);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a tiger'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig5. Comparisons/bear/a tiger/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig5. Comparisons/bear/a tiger/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig5. Comparisons/bear/a tiger/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig5. Comparisons/bear/a tiger/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section3" class="title is-2">Fig. 5: Comparisons.</h2> -->
-
-            <div
-                style="background-color: rgb(231, 231, 255);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'winnie the pooh'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig5. Comparisons/furry/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig5. Comparisons/furry/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig5. Comparisons/furry/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig5. Comparisons/furry/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section3" class="title is-2">Fig. 5: Comparisons.</h2> -->
-
-            <div
-                style="background-color: rgb(231, 231, 255);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'mario bross clothes'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig5. Comparisons/person-complete/mario bross clothes/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig5. Comparisons/person-complete/mario bross clothes/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig5. Comparisons/person-complete/mario bross clothes/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig5. Comparisons/person-complete/mario bross clothes/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <!-- <h2 id="section3" class="title is-2">Fig. 5: Comparisons.</h2> -->
-
-            <div
-                style="background-color: rgb(231, 231, 255);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'black and white checkered pattern side table'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/in2n-masks.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <h2 id="section4" class="title is-2">Fig. 6. Convergence Speed.</h2>
-
-            <div
-                style="background-color: rgb(202, 255, 202);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <h3 class="title is-3" style="text-align: center;">'a panda'</h3>
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                Instruct-NeRF2NeRF + masks
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig6. Convergence Speed/in2n.mp4" type="video/mp4">
-                            </video>
-                            
-                        </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <!-- <p style="text-align: center;">
-                                    </pstyle>
-                                    Instruct-NeRF2NeRF + Masks
-                                </p> -->
-                                <!-- <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/in2n+masks.mp4"
-                                        type="video/mp4">
-                                </video> -->
-                                <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source src="static/videos/SuppMat/Fig6. Convergence Speed/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig6. Convergence Speed/ours.mp4"
-                                        type="video/mp4">
-                                </video>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <h2 id="section5" class="title is-2">Fig. 7: Edge-Conditioned</h2>
-
-            <div
-                style="background-color: rgb(246, 223, 192);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <!-- <h3 class="title is-3" style="text-align: center;">'black and white checkered pattern side table'</h3> -->
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                               'A Fauvism painting'
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig7. Edge-conditioned/A Fauvism painting.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <!-- <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video> -->
-                        </div>
-                    </div>
-                    <div class="column">
+                <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+                    <i class="fab fa-github"></i>
+                </a>
+            </div> -->
+            <div class="columns is-centered">
+                <div class="column is-8">
                     <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                'An Edward Munch painting'
-                            </p>
 
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig7. Edge-conditioned/An Edward Munch painting.mp4"
-                                    type="video/mp4">
-                            </video>
-                            </div>
-                    </div>
-                    <!--/ Visual Effects. -->
+                        <p>
+                            We borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                                code</a> of this
+                            website from Nerfies ^.^ Thanks!
 
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    'Vincent Van Gogh'
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig7. Edge-conditioned/Vincent Van Gogh.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <!-- <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours.mp4"
-                                        type="video/mp4">
-                                </video> -->
-                            </div>
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-
-
-
-
-
-
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <h2 id="section6" class="title is-2">Fig. 8: 3D Object Compositing</h2>
-
-            <div
-                style="background-color: rgb(192, 241, 246);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <!-- <h3 class="title is-3" style="text-align: center;">'black and white checkered pattern side table'</h3> -->
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    <div class="column">
-                        <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                               'a brown cowboy hat'
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig8. 3D Object Compositing/a brown cowboy hat.mp4"
-                                    type="video/mp4">
-                            </video>
-                            <!-- <p style="text-align: center;">
-                                </pstyle>
-                                Ours Without Projection
-                            </p>
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours-proj.mp4"
-                                    type="video/mp4">
-                            </video> -->
-                        </div>
-                    </div>
-                    <div class="column">
-                    <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                'a plaid cowboy hat'
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig8. 3D Object Compositing/a plaid cowboy hat.mp4"
-                                    type="video/mp4">
-                            </video>
-                            </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    <div class="column">
-                        <!-- <h2 class="title is-3">Results</h2> -->
-                        <div class="columns is-centered">
-                            <div class="column content">
-                                <p style="text-align: center;">
-                                    </pstyle>
-                                    'a metallic cowboy hat'
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig8. 3D Object Compositing/a metallic cowboy hat.mp4"
-                                        type="video/mp4">
-                                </video>
-                                <!-- <p style="text-align: center;">
-                                    </pstyle>
-                                    Ours
-                                </p>
-                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                    <source
-                                        src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours.mp4"
-                                        type="video/mp4">
-                                </video> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-    <section class="section">
-        <div class="container is-max-desktop">
-            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
-            <h2 id="section7" class="title is-2">Fig. 9: Scene Editing</h2>
-
-            <div
-                style="background-color: rgb(232, 246, 192);  padding: 20px; display: inline-block;border-radius: 15px;">
-                <!-- <h3 class="title is-3" style="text-align: center;">'black and white checkered pattern side table'</h3> -->
-
-                <div class="columns is-centered">
-
-                    <!-- Visual Effects. -->
-                    
-                    <div class="column">
-                    <div class="content">
-                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
-                            <p style="text-align: center;">
-                                </pstyle>
-                                'Van Gogh-Style garden'
-                            </p>
-
-                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-                                <source
-                                    src="static/videos/SuppMat/Fig9. Scene Editing/Van Gogh-Style garden.mp4"
-                                    type="video/mp4">
-                            </video>
-                            </div>
-                    </div>
-                    <!--/ Visual Effects. -->
-
-                    <!-- Matting. -->
-                    
-                </div>
-            </div>
-        </div>
-    </section>
+    </footer>
