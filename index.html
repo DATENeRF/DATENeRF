@@ -175,7 +175,7 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a metallic vase</h3>
                                 <div
-                                    style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
+                                    style="display: flex; justify-content: space-between; margin-bottom: -1px; padding: 0px 0;">
                                     <span>Instruct-NeRF2NeRF</span>
                                     <span>Ours</span>
                                 </div>
@@ -212,7 +212,7 @@
                             <div class="col-md-8 col-md-offset-2">
                                 <h3 class="title is-5" style="text-align: center; margin-bottom: -1px;">a b&w checkered pattern table</h3>
                                 <div
-                                    style="display: flex; justify-content: space-between; margin-bottom: -2px; padding: 0px 0;">
+                                    style="display: flex; justify-content: space-between; margin-bottom: -25px; padding: 0px 0;">
                                     <span>Instruct-NeRF2NeRF</span>
                                     <span>Ours</span>
                                 </div>
@@ -307,7 +307,286 @@
             </div>
         </div>
     </section>
-    
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
+            <h2 id="section4" class="title is-2">Convergence Speed.</h2>
+
+            <div
+                style="background-color: rgb(202, 255, 202);  padding: 20px; display: inline-block;border-radius: 15px;">
+                <h3 class="title is-3" style="text-align: center;">'a panda'</h3>
+
+                <div class="columns is-centered">
+
+                    <!-- Visual Effects. -->
+                    <div class="column">
+                        <div class="content">
+                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
+                            <p style="text-align: center;">
+                                </pstyle>
+                                Instruct-NeRF2NeRF + masks
+                            </p>
+
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source src="static/videos/SuppMat/Fig6. Convergence Speed/in2n.mp4" type="video/mp4">
+                            </video>
+                            
+                        </div>
+                    </div>
+                    <!--/ Visual Effects. -->
+
+                    <!-- Matting. -->
+                    <div class="column">
+                        <!-- <h2 class="title is-3">Results</h2> -->
+                        <div class="columns is-centered">
+                            <div class="column content">
+                                <!-- <p style="text-align: center;">
+                                    </pstyle>
+                                    Instruct-NeRF2NeRF + Masks
+                                </p> -->
+                                <!-- <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                    <source src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/in2n+masks.mp4"
+                                        type="video/mp4">
+                                </video> -->
+                                <p style="text-align: center;">
+                                </pstyle>
+                                Ours Without Projection
+                            </p>
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source src="static/videos/SuppMat/Fig6. Convergence Speed/ours-proj.mp4"
+                                    type="video/mp4">
+                            </video>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="text-align: center;">
+                                    </pstyle>
+                                    Ours
+                                </p>
+                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                    <source
+                                        src="static/videos/SuppMat/Fig6. Convergence Speed/ours.mp4"
+                                        type="video/mp4">
+                                </video>
+            </div>
+        </div>
+    </section>
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
+            <h2 id="section5" class="title is-2">Edge-Conditioned</h2>
+
+            <div
+                style="background-color: rgb(246, 223, 192);  padding: 20px; display: inline-block;border-radius: 15px;">
+                <!-- <h3 class="title is-3" style="text-align: center;">'black and white checkered pattern side table'</h3> -->
+
+                <div class="columns is-centered">
+
+                    <!-- Visual Effects. -->
+                    <div class="column">
+                        <div class="content">
+                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
+                            <p style="text-align: center;">
+                                </pstyle>
+                               'A Fauvism painting'
+                            </p>
+
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source
+                                    src="static/videos/SuppMat/Fig7. Edge-conditioned/A Fauvism painting.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <!-- <p style="text-align: center;">
+                                </pstyle>
+                                Ours Without Projection
+                            </p>
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source
+                                    src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours-proj.mp4"
+                                    type="video/mp4">
+                            </video> -->
+                        </div>
+                    </div>
+                    <div class="column">
+                    <div class="content">
+                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
+                            <p style="text-align: center;">
+                                </pstyle>
+                                'An Edward Munch painting'
+                            </p>
+
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source
+                                    src="static/videos/SuppMat/Fig7. Edge-conditioned/An Edward Munch painting.mp4"
+                                    type="video/mp4">
+                            </video>
+                            </div>
+                    </div>
+                    <!--/ Visual Effects. -->
+
+                    <!-- Matting. -->
+                    <div class="column">
+                        <!-- <h2 class="title is-3">Results</h2> -->
+                        <div class="columns is-centered">
+                            <div class="column content">
+                                <p style="text-align: center;">
+                                    </pstyle>
+                                    'Vincent Van Gogh'
+                                </p>
+                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                    <source
+                                        src="static/videos/SuppMat/Fig7. Edge-conditioned/Vincent Van Gogh.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <!-- <p style="text-align: center;">
+                                    </pstyle>
+                                    Ours
+                                </p>
+                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                    <source
+                                        src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours.mp4"
+                                        type="video/mp4">
+                                </video> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
+            <h2 id="section6" class="title is-2">3D Object Compositing</h2>
+
+            <div
+                style="background-color: rgb(192, 241, 246);  padding: 20px; display: inline-block;border-radius: 15px;">
+                <!-- <h3 class="title is-3" style="text-align: center;">'black and white checkered pattern side table'</h3> -->
+
+                <div class="columns is-centered">
+
+                    <!-- Visual Effects. -->
+                    <div class="column">
+                        <div class="content">
+                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
+                            <p style="text-align: center;">
+                                </pstyle>
+                               'a brown cowboy hat'
+                            </p>
+
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source
+                                    src="static/videos/SuppMat/Fig8. 3D Object Compositing/a brown cowboy hat.mp4"
+                                    type="video/mp4">
+                            </video>
+                            <!-- <p style="text-align: center;">
+                                </pstyle>
+                                Ours Without Projection
+                            </p>
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source
+                                    src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours-proj.mp4"
+                                    type="video/mp4">
+                            </video> -->
+                        </div>
+                    </div>
+                    <div class="column">
+                    <div class="content">
+                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
+                            <p style="text-align: center;">
+                                </pstyle>
+                                'a plaid cowboy hat'
+                            </p>
+
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source
+                                    src="static/videos/SuppMat/Fig8. 3D Object Compositing/a plaid cowboy hat.mp4"
+                                    type="video/mp4">
+                            </video>
+                            </div>
+                    </div>
+                    <!--/ Visual Effects. -->
+
+                    <!-- Matting. -->
+                    <div class="column">
+                        <!-- <h2 class="title is-3">Results</h2> -->
+                        <div class="columns is-centered">
+                            <div class="column content">
+                                <p style="text-align: center;">
+                                    </pstyle>
+                                    'a metallic cowboy hat'
+                                </p>
+                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                    <source
+                                        src="static/videos/SuppMat/Fig8. 3D Object Compositing/a metallic cowboy hat.mp4"
+                                        type="video/mp4">
+                                </video>
+                                <!-- <p style="text-align: center;">
+                                    </pstyle>
+                                    Ours
+                                </p>
+                                <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                    <source
+                                        src="static/videos/SuppMat/Fig5. Comparisons/garden_table/black and white checkered pattern side table/ours.mp4"
+                                        type="video/mp4">
+                                </video> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section">
+        <div class="container is-max-desktop">
+            <!-- <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 82%; background-color: gray; opacity: 0.5;"></div> -->
+            <h2 id="section7" class="title is-2">Scene Editing</h2>
+
+            <div
+                style="background-color: rgb(232, 246, 192);  padding: 20px; display: inline-block;border-radius: 15px;">
+                <!-- <h3 class="title is-3" style="text-align: center;">'black and white checkered pattern side table'</h3> -->
+
+                <div class="columns is-centered">
+
+                    <!-- Visual Effects. -->
+                    
+                    <div class="column">
+                    <div class="content">
+                            <!-- <h2 class="title is-3">Fig 1.</h2> -->
+                            <p style="text-align: center;">
+                                </pstyle>
+                                'Van Gogh-Style garden'
+                            </p>
+
+                            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+                                <source
+                                    src="static/videos/SuppMat/Fig9. Scene Editing/Van Gogh-Style garden.mp4"
+                                    type="video/mp4">
+                            </video>
+                            </div>
+                    </div>
+                    <!--/ Visual Effects. -->
+
+                    <!-- Matting. -->
+                    
+                </div>
+            </div>
+        </div>
+    </section>
     <!--/ Abstract. -->
     <footer class="footer">
         <div class="container">
