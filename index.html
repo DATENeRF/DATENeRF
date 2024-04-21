@@ -47,7 +47,8 @@
             <div class="container is-max-desktop" style="margin-top: -50px;">
                 <div class="columns is-centered">
                     <div class="column has-text-centered">
-                        <h1 class="title is-1 publication-title">💌 DATENeRF: Depth-Aware Text-based Editing of NeRFs 💌</h1>
+                        <h1 class="title is-1 publication-title">💌 DATENeRF: Depth-Aware Text-based Editing of NeRFs 💌
+                        </h1>
                         <div class="is-size-5 publication-authors" style="margin-top: -30px;">
                             <span class="author-block">
                                 <a href="https://scholar.google.com/citations?user=7vnDKiwAAAAJ&hl=en">Sara
@@ -98,7 +99,7 @@
                                     </a>
                                 </span>
 
-                                <!-- Code Link. --> 
+                                <!-- Code Link. -->
                                 <span class="link-block">
                                     <a href="https://github.com/sararoma95/DATENeRF"
                                         class="external-link button is-normal is-rounded is-dark">
@@ -324,10 +325,10 @@
     </section>
 
     <section>
-     <div class="container is-max-desktop">
-      <div class="columns is-centered has-text-centered">
-        <h2 class="title is-2" style="text-align: center; margin-bottom: 25px;">Overview</h2>
-        </div>
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <h2 class="title is-2" style="text-align: center; margin-bottom: 25px;">Overview</h2>
+            </div>
         </div>
         <figure>
             <!-- Embedding the PDF file -->
@@ -335,10 +336,15 @@
             <img src="static/pdfs/pipeline.png" alt="Description of the image">
             <!-- Adding a caption -->
         </figure>
-         <div class="container is-max-desktop">
-             <div class="content has-text-justified">
-            <figcaption>Overview: Our input is a NeRF (with its posed input images) and per-view editing masks and an edit text prompt. We use the NeRF depth to condition the masked region inpainting. We reproject this edited result to a subsequent viewpoint and using a hybrid inpainting scheme that first only inpaints disoccluded regions and then refines the entire masked region. This is done by changing the inpainting masks (indicated by the blue and orange blocks on the right side) during diffusion.</figcaption>
-           </div>
+        <div class="container is-max-desktop">
+            <div class="content has-text-justified">
+                <figcaption>Overview: Our input is a NeRF (with its posed input images) and per-view editing masks and
+                    an edit text prompt. We use the NeRF depth to condition the masked region inpainting. We reproject
+                    this edited result to a subsequent viewpoint and using a hybrid inpainting scheme that first only
+                    inpaints disoccluded regions and then refines the entire masked region. This is done by changing the
+                    inpainting masks (indicated by the blue and orange blocks on the right side) during diffusion.
+                </figcaption>
+            </div>
         </div>
     </section>
 
@@ -613,10 +619,13 @@
             </div>
         </div>
     </section>
-    <!--/ Abstract. -->
-    <footer class="footer">
-        <div class="container">
-            <!-- <div class="content has-text-centered">
+    <a href="https://clustrmaps.com/site/1bze5"  title="Visit tracker"><img src="//www.clustrmaps.com/map_v2.png?d=hZp6VRuLYeHNDWTl8AapOvZm1z9qcvCfiUddeGq7_QM&cl=ffffff" /></a>
+    <script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=hZp6VRuLYeHNDWTl8AapOvZm1z9qcvCfiUddeGq7_QM&cl=ffffff&w=a"></script>
+</body>
+<!--/ Abstract. -->
+<footer class="footer">
+    <div class="container">
+        <!-- <div class="content has-text-centered">
                 <a class="icon-link" href="./static/videos/nerfies_paper.pdf">
                     <i class="fas fa-file-pdf"></i>
                 </a>
@@ -624,18 +633,19 @@
                     <i class="fab fa-github"></i>
                 </a>
             </div> -->
-            <div class="columns is-centered">
-                <div class="column is-8">
-                    <div class="content">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
 
-                        <p>
-                            We borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
-                                code</a> of this
-                            website from Nerfies ^.^ Thanks!
+                    <p>
+                        We borrow the <a href="https://github.com/nerfies/nerfies.github.io">source
+                            code</a> of this
+                        website from Nerfies ^.^ Thanks!
 
-                        </p>
-                    </div>
+                    </p>
                 </div>
             </div>
         </div>
-    </footer>
+
+    </div>
+</footer>
